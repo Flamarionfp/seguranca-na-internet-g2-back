@@ -11,8 +11,8 @@ model Person {
   id           String   @id @default(uuid())
   name         String
   email        String   @unique
-  phone_number String?  @unique
-  web_address  String?  @unique
+  phone_number String?
+  web_address  String?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
