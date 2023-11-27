@@ -6,6 +6,7 @@ const validEnvs = z.enum(["development", "production"]);
 
 const envSchema = z.object({
   NODE_ENV: validEnvs.default("development"),
+  API_KEY: z.string().trim(),
   PORT: z.coerce.number().default(4000),
   DATABASE_PASSWORD: z.string().trim(),
   DATABASE_URL: z.string().trim(),
