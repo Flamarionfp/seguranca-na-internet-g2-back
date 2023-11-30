@@ -8,7 +8,7 @@ import verifyApiKey from "./middlewares/verify-api-key";
 
 const app = express();
 app.use(morgan(isProduction ? "short" : "dev"));
-app.use(cors());
+app.use(cors({ origin: env.CORS_ORIGIN }));
 app.use(express.json());
 app.use(verifyApiKey.handle);
 app.use(router);
